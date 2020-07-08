@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      title: 'FastG-ADMI 后台管理',
+      title: '后台管理',
       logo: Logo
     }
   }

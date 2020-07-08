@@ -2,7 +2,7 @@ module.exports = {
   /**
    * @description 网站标题
    */
-  title: 'FastG-ADMIN',
+  title: '后台管理',
   /**
    * @description 是否显示 tagsView
    */
