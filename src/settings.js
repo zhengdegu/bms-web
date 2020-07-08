@@ -31,6 +31,23 @@ module.exports = {
    * @description 请求超时时间，毫秒（默认2分钟）
    */
   timeout: 1200000,
+
+  /**
+ * 登录url
+ */
+  loginUrl: 'auth/login',
+  /**
+   * 获取用户信息url
+   */
+  userInfoUrl: 'auth/info',
+  /**
+   * 获取验证码url
+   */
+  codeUrl: 'auth/code',
+  /**
+ * 退出url
+ */
+  logoutUrl: 'auth/logout',
   /**
    * @description 是否显示logo
    */

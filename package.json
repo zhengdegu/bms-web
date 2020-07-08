@@ -1,9 +1,8 @@
 {
-  "name": "eladmin-web",
+  "name": "bms-web",
   "version": "1.0.0",
-  "description": "EL-ADMIN 前端源码",
-  "author": "Zheng Jie",
-  "license": "Apache-2.0",
+  "description": "前端源码",
+  "author": "",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
@@ -27,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elunez/eladmin-web.git"
+    "url": "https://github.com/zhengdegu/bms-web.git"
   },
   "bugs": {
     "url": "https://github.com/elunez/eladmin/issues"
