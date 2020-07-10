@@ -38,26 +38,26 @@ export const constantRouterMap = [
     children: [
       {
         path: 'dashboard',
-        component: (resolve) => require(['@/views/home'], resolve),
+        component: (resolve) => require(['@/views/dashboard/index'], resolve),
         name: 'Dashboard',
         meta: { title: '首页', icon: 'index', affix: true, noCache: true }
       }
     ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    hidden: true,
+    redirect: 'noredirect',
+    children: [
+      {
+        path: 'center',
+        component: (resolve) => require(['@/views/system/user/center'], resolve),
+        name: '个人中心',
+        meta: { title: '个人中心' }
+      }
+    ]
   }
-  // {
-  //   path: '/user',
-  //   component: Layout,
-  //   hidden: true,
-  //   redirect: 'noredirect',
-  //   children: [
-  //     {
-  //       path: 'center',
-  //       component: (resolve) => require(['@/views/system/user/center'], resolve),
-  //       name: '个人中心',
-  //       meta: { title: '个人中心' }
-  //     }
-  //   ]
-  // }
 ]
 
 export default new Router({
