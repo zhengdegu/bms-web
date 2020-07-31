@@ -1,16 +1,16 @@
 <template>
-  <elFrame :src="grafanaApi" />
+  <div>
+    <svg-icon icon-class="doc" @click="click" />
+  </div>
 </template>
+
 <script>
-import { mapGetters } from 'vuex'
-import elFrame from '@/components/Iframe/index'
 export default {
-  name: 'Grafana',
-  components: { elFrame },
-  computed: {
-    ...mapGetters([
-      'grafanaApi'
-    ])
+  name: 'Doc',
+  methods: {
+    click() {
+      window.open('http://10.1.2.4:3000', '_blank')
+    }
   }
 }
 </script>
