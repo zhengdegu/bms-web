@@ -14,18 +14,20 @@
     <el-table
       :data="tableData"
     >
-      <el-table-column
-        type="index"
-        width="150"
-      />
-      <el-table-column
-        label="服务"
-        prop="name"
-      />
-      <el-table-column
-        label="时间"
-        prop="date"
-      />
+      <el-table-column type="index" width="150" />
+      <el-table-column label="服务" prop="name" />
+      <el-table-column label="时间" prop="date" />
+      <el-table-column label="地址" prop="uri" />
+      <el-table-column prop="status" label="状态" align="center">
+        <template slot-scope="scope">
+          <el-switch
+            v-model="scope.row.enabled"
+            active-color="#F56C6C"
+            inactive-color="#409EFF"
+            @change="changeEnabled(scope.row, scope.row.enabled)"
+          />
+        </template>
+      </el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button
@@ -40,7 +42,7 @@
     <el-pagination
       :current-page.sync="currentPage1"
       :page-size="10"
-      :total="3"
+      :total="4"
       layout="total, prev, pager, next"
       @current-change="handleCurrentChange"
       @size-change="handleSizeChange"
@@ -56,13 +58,24 @@ export default {
     return {
       tableData: [{
         date: '2020-07-23',
-        name: 'grafana'
+        name: 'grafana',
+        uri: 'http://10.1.2.4:3000',
+        status: false
       }, {
         date: '2020-07-23',
-        name: 'spring-admin'
+        name: 'spring-admin',
+        uri: 'http://10.1.2.6:20011',
+        status: false
       }, {
         date: '2020-07-23',
-        name: 'kibana'
+        name: 'kibana',
+        uri: 'http://10.1.1.7:5602',
+        status: false
+      }, {
+        date: '2020-07-23',
+        name: 'nacos',
+        uri: 'http://10.1.2.4:8848/nacos',
+        status: false
       }
       ],
       formInline: {
@@ -73,19 +86,16 @@ export default {
   },
   methods: {
     click(index, row) {
-      if (row.name === 'grafana') {
-        window.open('http://10.1.2.4:3000', '_blank')
-      } else if (row.name === 'spring-admin') {
-        window.open('http://10.1.2.6:20011', '_blank')
-      } else if (row.name === 'kibana') {
-
-      }
+      window.open(row.uri, '_blank')
     },
     onSubmit() {
     },
     handleSizeChange(val) {
     },
     handleCurrentChange(val) {
+    },
+    // 改变状态
+    changeEnabled(data, val) {
     }
   }
 }

@@ -55,7 +55,7 @@ module.exports = {
   /**
    * 是否显示设置的底部信息
    */
-  showFooter: true,
+  showFooter: false,
   /**
    * 底部文字，支持html语法
    */
@@ -63,5 +63,5 @@ module.exports = {
   /**
    * 备案号
    */
-  caseNumber: '浙ICP备18005431号'
+  caseNumber: ''
 }
