@@ -31,7 +31,10 @@ module.exports = {
    * @description 请求超时时间，毫秒（默认2分钟）
    */
   timeout: 1200000,
-
+  /**
+   * 用户信息头
+   */
+  UserHeader: 'x-user-header',
   /**
  * 登录url
  */

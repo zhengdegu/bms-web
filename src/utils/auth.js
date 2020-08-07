@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 import Config from '@/settings'
 
 const TokenKey = Config.TokenKey
-
+const UserHeader = Config.UserHeader
 export function getToken() {
   return Cookies.get(TokenKey)
 }
@@ -15,4 +15,11 @@ export function setToken(token, rememberMe) {
 
 export function removeToken() {
   return Cookies.remove(TokenKey)
+}
+export function setUser(username) {
+  return Cookies.set(UserHeader, username)
+}
+
+export function getUser() {
+  return Cookies.get(UserHeader)
 }
