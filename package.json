@@ -29,7 +29,7 @@
     "url": "https://github.com/zhengdegu/bms-web.git"
   },
   "bugs": {
-    "url": "https://github.com/elunez/eladmin/issues"
+    "url": "https://github.com/zhengdegu/bms-web/issues"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "0.1.0",
