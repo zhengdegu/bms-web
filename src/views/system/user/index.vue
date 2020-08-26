@@ -216,6 +216,7 @@ export default {
   cruds() {
     return CRUD({ title: '用户', url: 'api/users', crudMethod: { ...crudUser }})
   },
+  // 可复用功能
   mixins: [presenter(), header(), form(defaultForm), crud()],
   // 数据字典
   dicts: ['user_status'],

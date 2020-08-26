@@ -45,6 +45,7 @@ export default {
   name: 'Login',
   data() {
     return {
+      // 背景图片
       Background: Background,
       codeUrl: '',
       cookiePass: '',
@@ -64,12 +65,16 @@ export default {
       redirect: undefined
     }
   },
+  // 监听
   watch: {
     $route: {
       handler: function(route) {
         this.redirect = route.query && route.query.redirect
       },
-      immediate: true
+      // 绑定值的时候也执行函数，则就需要用到immediate属性
+      immediate: true,
+      // 当需要监听一个对象的改变时，普通的watch方法无法监听到对象内部属性的改变，只有data中的数据才能够监听到变化，此时就需要deep属性对对象进行深度监听
+      deep: false
     }
   },
   created() {
@@ -131,9 +136,6 @@ export default {
             this.loading = false
             this.getCode()
           })
-        } else {
-          console.log('error submit!!')
-          return false
         }
       })
     },
